@@ -1,0 +1,396 @@
+/**
+ * Estilos para los shortcodes y mejoras de GGL – Personalización Petcio.
+ * Ajusta libremente los colores/tamaños para que combinen con la
+ * paleta de guauguauland.com.
+ */
+
+:root {
+	--ggl-color-primario: #ff6b35;
+	--ggl-color-texto: #222222;
+	--ggl-color-fondo-suave: #fff5f0;
+	--ggl-radio-borde: 14px;
+}
+
+/* ---------- Hero slider ([ggl_hero_slider]) ---------- */
+.ggl-hero-slider {
+	position: relative;
+	overflow: hidden;
+	height: var(--ggl-hero-altura, 520px);
+	border-radius: var(--ggl-radio-borde);
+}
+
+.ggl-hero-slider__track {
+	position: relative;
+	height: 100%;
+}
+
+.ggl-hero-slider__slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.6s ease;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+}
+
+.ggl-hero-slider__slide.is-activa {
+	opacity: 1;
+	visibility: visible;
+}
+
+.ggl-hero-slider__contenido {
+	max-width: 520px;
+	margin-left: 6%;
+	background: rgba(255, 255, 255, 0.85);
+	padding: 28px 32px;
+	border-radius: var(--ggl-radio-borde);
+}
+
+.ggl-hero-slider__titulo {
+	margin: 0 0 10px;
+	font-size: clamp(22px, 3vw, 34px);
+}
+
+.ggl-hero-slider__boton {
+	display: inline-block;
+	margin-top: 14px;
+	padding: 10px 26px;
+	background: var(--ggl-color-primario);
+	color: #fff;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.ggl-hero-slider__flecha {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.9);
+	border: none;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	font-size: 22px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.ggl-hero-slider__flecha--prev {
+	left: 16px;
+}
+
+.ggl-hero-slider__flecha--next {
+	right: 16px;
+}
+
+.ggl-hero-slider__puntos {
+	position: absolute;
+	bottom: 16px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+	z-index: 2;
+}
+
+.ggl-hero-slider__punto {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+
+.ggl-hero-slider__punto.is-activo {
+	background: var(--ggl-color-primario);
+}
+
+/* ---------- Testimonios ([ggl_testimonios]) ---------- */
+.ggl-testimonios__track {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	padding: 6px 6px 18px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.ggl-testimonios__item {
+	flex: 0 0 320px;
+	scroll-snap-align: start;
+	background: var(--ggl-color-fondo-suave);
+	border-radius: var(--ggl-radio-borde);
+	padding: 24px;
+	margin: 0;
+}
+
+.ggl-testimonios__avatar img {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.ggl-testimonios__autor {
+	display: block;
+	margin-top: 12px;
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* ---------- Categorías ([ggl_categorias_mascotas]) ---------- */
+.ggl-categorias-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 18px;
+}
+
+.ggl-categorias-grid__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: var(--ggl-color-texto);
+	text-align: center;
+}
+
+.ggl-categorias-grid__imagen {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+	background-color: var(--ggl-color-fondo-suave);
+}
+
+/* ---------- Iconos de beneficios ([ggl_iconos_beneficios]) ---------- */
+.ggl-beneficios {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.ggl-beneficios__item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 220px;
+}
+
+.ggl-beneficios__icono {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: var(--ggl-color-primario);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.ggl-beneficios__titulo {
+	display: block;
+}
+
+.ggl-beneficios__subtitulo {
+	display: block;
+	font-size: 0.85em;
+	opacity: 0.75;
+}
+
+/* ---------- Countdown ([ggl_countdown]) ---------- */
+.ggl-countdown {
+	background: var(--ggl-color-texto);
+	color: #fff;
+	border-radius: var(--ggl-radio-borde);
+	padding: 22px;
+	text-align: center;
+}
+
+.ggl-countdown__reloj {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	margin: 14px 0;
+}
+
+.ggl-countdown__bloque {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 56px;
+}
+
+.ggl-countdown__numero {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+.ggl-countdown__boton {
+	display: inline-block;
+	margin-top: 6px;
+	padding: 8px 22px;
+	background: var(--ggl-color-primario);
+	color: #fff;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* ---------- WooCommerce: insignia "Nuevo" ---------- */
+.ggl-insignia {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: #2ecc71;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 4px 10px;
+	border-radius: 999px;
+	z-index: 5;
+}
+
+/* ---------- WooCommerce: barra de envío gratis ---------- */
+.ggl-barra-envio {
+	margin: 12px 0;
+}
+
+.ggl-barra-envio__texto {
+	font-size: 13px;
+	margin: 0 0 6px;
+}
+
+.ggl-barra-envio__pista {
+	background: #eee;
+	border-radius: 999px;
+	height: 8px;
+	overflow: hidden;
+}
+
+.ggl-barra-envio__relleno {
+	display: block;
+	height: 100%;
+	background: var(--ggl-color-primario);
+	transition: width 0.4s ease;
+}
+
+/* ---------- WooCommerce: barra fija de compra en móvil ---------- */
+.ggl-barra-fija-compra {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 10px 16px;
+	z-index: 999;
+	transform: translateY(100%);
+	transition: transform 0.3s ease;
+}
+
+.ggl-barra-fija-compra.is-visible {
+	transform: translateY(0);
+}
+
+.ggl-barra-fija-compra__info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	overflow: hidden;
+}
+
+.ggl-barra-fija-compra__info img {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.ggl-barra-fija-compra__titulo {
+	margin: 0;
+	font-size: 13px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 45vw;
+}
+
+.ggl-barra-fija-compra__precio {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.ggl-barra-fija-compra__boton {
+	background: var(--ggl-color-primario);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 600;
+	flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+	.ggl-barra-fija-compra {
+		display: none !important;
+	}
+}
+
+/* ---------- WooCommerce: campo "nombre de tu mascota" ---------- */
+.ggl-campo-mascota {
+	margin-bottom: 20px;
+}
+
+/* ---------- Logo del header/footer más grande ---------- */
+/* Si cambias el tamaño, actualiza también la constante GGL_LOGO_MAX_WIDTH
+   en ggl-personalizacion-petcio.php (esa es la que manda en el sitio real). */
+.wpbingoLogo img,
+#bwp-footer .elementor-element-e3618ba img {
+	max-width: 200px !important;
+	width: auto;
+	height: auto;
+}
+
+/* ---------- Iconos de redes sociales del footer ([social_link]) ---------- */
+.ggl-social-link {
+	display: flex;
+	gap: 12px;
+}
+
+.ggl-social-link a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	text-decoration: none;
+}
+
+.ggl-social-link a:hover {
+	background: var(--ggl-color-primario);
+}
+
+/* ---------- Oculta los avisos "Go Pro" de Elementor en el editor ---------- */
+.e-pro-upgrade,
+.elementor-nerd-box,
+.elementor-control-promotion {
+	display: none !important;
+}
