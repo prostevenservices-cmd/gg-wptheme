@@ -118,6 +118,15 @@ Elementor) las partes del footer que sí se pueden resolver por código:
   (por defecto en `#`; edítalas con tus perfiles reales para que se
   muestren los iconos).
 
+## Botón "Book Grooming" (reemplaza "All Categories")
+
+El módulo `boton-reservar-cita.php` oculta el widget "All Categories" del
+header de escritorio (el menú desplegable de categorías de producto) y
+coloca en su lugar un botón simple, sin dropdown, con el texto
+**"Book Grooming"**, texto blanco y fondo del color de acento del tema,
+que enlaza directo a `GGL_URL_RESERVAR_CITA` (por defecto
+`https://guauguauland.com/reservar-cita/`).
+
 ## Mejoras de WooCommerce incluidas
 
 - Insignia **"Nuevo"** automática en productos publicados hace menos de 30 días.

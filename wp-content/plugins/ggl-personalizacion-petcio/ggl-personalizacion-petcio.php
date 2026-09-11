@@ -59,6 +59,9 @@ if ( ! defined( 'GGL_SOCIAL_INSTAGRAM' ) ) {
 if ( ! defined( 'GGL_SOCIAL_WHATSAPP' ) ) {
 	define( 'GGL_SOCIAL_WHATSAPP', '#' ); // Ej: 'https://wa.me/17879185519'.
 }
+if ( ! defined( 'GGL_URL_RESERVAR_CITA' ) ) {
+	define( 'GGL_URL_RESERVAR_CITA', 'https://guauguauland.com/reservar-cita/' );
+}
 
 /**
  * Carga los módulos del plugin.
@@ -70,6 +73,7 @@ require_once GGL_PERSONALIZACION_DIR . 'includes/woocommerce-mejoras.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/optimizacion-seguridad.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/seo-schema.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/personalizacion-marca.php';
+require_once GGL_PERSONALIZACION_DIR . 'includes/boton-reservar-cita.php';
 
 /**
  * Encola los assets (CSS/JS) propios del plugin solo en el front-end.
