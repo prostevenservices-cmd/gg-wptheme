@@ -27,9 +27,11 @@ Esta es la forma más ordenada y fácil de mantener/actualizar en el tiempo.
 
    ```php
    define( 'GGL_BUSINESS_NAME', 'Guau Guau Land' );
-   define( 'GGL_BUSINESS_PHONE', '+56 2 1234 5678' );
+   define( 'GGL_BUSINESS_PHONE', '+1 (787) 918-5519' );      // Texto visible
+   define( 'GGL_BUSINESS_PHONE_TEL', '+17879185519' );       // Para el enlace tel: (solo dígitos y +)
    define( 'GGL_BUSINESS_ADDRESS', 'Tu dirección aquí' );
    define( 'GGL_FREE_SHIPPING_THRESHOLD', 50 );
+   define( 'GGL_LOGO_MAX_WIDTH', '200px' );                   // Tamaño máximo del logo
    ```
 
 7. En el menú lateral del escritorio aparecerán dos nuevos tipos de
@@ -61,9 +63,9 @@ Si prefieres no instalar un plugin adicional y gestionar todo desde
      *Frontend only* si el snippet solo afecta al front-end, por ejemplo
      `shortcodes-secciones.php`).
    - Guarda y marca el interruptor como **Active**.
-4. Repite para los 4 archivos: `shortcodes-secciones.php`,
+4. Repite para los 5 archivos: `shortcodes-secciones.php`,
    `woocommerce-mejoras.php`, `optimizacion-seguridad.php`,
-   `seo-schema.php`.
+   `seo-schema.php`, `personalizacion-marca.php`.
 5. Añade también las constantes del inicio de
    `ggl-personalizacion-petcio.php` (`GGL_BUSINESS_NAME`, etc.) en un
    snippet PHP propio que se ejecute **antes** que los demás (ordénalo
@@ -82,6 +84,12 @@ Si prefieres no instalar un plugin adicional y gestionar todo desde
   PHP visibles (avisos blancos con texto de error).
 - Revisa la consola del navegador (F12 → Console) por si hay errores de
   JavaScript.
+- Comprueba que el teléfono del header ("Call Us on") y el del footer
+  ("Contact our customer happiness team") ya muestran
+  `+1 (787) 918-5519` y que el enlace del teléfono (click en móvil) marca
+  ese mismo número.
+- Comprueba que el logo se ve más grande (hasta 200px de ancho) tanto en
+  el header de escritorio como en el de móvil.
 - Añade un producto reciente y confirma que aparece la insignia **"Nuevo"**.
 - Añade productos al carrito por debajo del umbral de envío gratis y
   comprueba que aparece la barra de progreso.

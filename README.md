@@ -18,7 +18,8 @@ wp-content/plugins/ggl-personalizacion-petcio/
 │   ├── shortcodes-secciones.php     # Slider, testimonios, categorías, beneficios, countdown
 │   ├── woocommerce-mejoras.php      # Envío gratis, insignia "Nuevo", barra fija móvil, campo mascota...
 │   ├── optimizacion-seguridad.php   # Limpieza de head, emojis, XML-RPC, login, etc.
-│   └── seo-schema.php               # Schema.org PetStore + meta description/OG de respaldo
+│   ├── seo-schema.php               # Schema.org PetStore + meta description/OG de respaldo
+│   └── personalizacion-marca.php    # Teléfono real de la tienda (reemplaza el de demo) + tamaño del logo
 └── assets/
     ├── css/personalizacion.css
     └── js/personalizacion.js
@@ -40,8 +41,10 @@ páginas sin pagar la licencia anual.
 2. En tu WordPress: **Plugins → Añadir nuevo → Subir plugin** y sube el zip.
 3. Activa el plugin **GGL – Personalización Petcio**.
 4. Revisa las constantes al principio de `ggl-personalizacion-petcio.php`
-   (`GGL_BUSINESS_PHONE`, `GGL_BUSINESS_ADDRESS`, `GGL_FREE_SHIPPING_THRESHOLD`)
-   y ajústalas a los datos reales de la tienda.
+   (`GGL_BUSINESS_PHONE`, `GGL_BUSINESS_PHONE_TEL`, `GGL_BUSINESS_ADDRESS`,
+   `GGL_FREE_SHIPPING_THRESHOLD`, `GGL_LOGO_MAX_WIDTH`) y ajústalas a los
+   datos reales de la tienda. Actualmente el teléfono está configurado como
+   `+1 (787) 918-5519` y el logo con `max-width: 200px`.
 
 ### Opción B — Con el plugin gratuito "WPCode" (Code Snippets)
 
@@ -70,6 +73,21 @@ Más detalle paso a paso en [`docs/GUIA-INSTALACION.md`](docs/GUIA-INSTALACION.m
 | `[ggl_countdown fecha="2026-12-31 23:59:59" texto="Oferta de verano"]` | Banner con cuenta atrás | Widget "Countdown" |
 
 Más ejemplos de uso en [`docs/EJEMPLOS-SHORTCODES.md`](docs/EJEMPLOS-SHORTCODES.md).
+
+## Teléfono y logo
+
+El tema Petcio muestra un teléfono de demostración en el header
+(`1300 655 896`) y otro en el footer (`(02) 6188 8062`), ambos definidos en
+las opciones del tema/Elementor, no en código. El módulo
+`personalizacion-marca.php` reemplaza automáticamente ambos números (texto
+visible y enlace `tel:`) por el teléfono real `+1 (787) 918-5519` en todo el
+HTML de cada página, y aumenta el logo (`.wpbingoLogo img`, usado en el
+header y en las versiones móvil/escritorio) a `max-width: 200px`.
+
+Para cambiar el teléfono o el tamaño del logo en el futuro, edita
+únicamente las constantes `GGL_BUSINESS_PHONE`, `GGL_BUSINESS_PHONE_TEL` y
+`GGL_LOGO_MAX_WIDTH` al principio de `ggl-personalizacion-petcio.php` (o el
+snippet PHP equivalente si usaste la Opción B).
 
 ## Mejoras de WooCommerce incluidas
 

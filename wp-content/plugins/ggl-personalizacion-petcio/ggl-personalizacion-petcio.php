@@ -32,13 +32,19 @@ if ( ! defined( 'GGL_BUSINESS_NAME' ) ) {
 	define( 'GGL_BUSINESS_NAME', 'Guau Guau Land' );
 }
 if ( ! defined( 'GGL_BUSINESS_PHONE' ) ) {
-	define( 'GGL_BUSINESS_PHONE', '' ); // Ej: '+56 2 1234 5678'.
+	define( 'GGL_BUSINESS_PHONE', '+1 (787) 918-5519' ); // Texto visible del teléfono.
+}
+if ( ! defined( 'GGL_BUSINESS_PHONE_TEL' ) ) {
+	define( 'GGL_BUSINESS_PHONE_TEL', '+17879185519' ); // Formato para el enlace tel: (solo dígitos y +).
 }
 if ( ! defined( 'GGL_BUSINESS_ADDRESS' ) ) {
 	define( 'GGL_BUSINESS_ADDRESS', '' );
 }
 if ( ! defined( 'GGL_FREE_SHIPPING_THRESHOLD' ) ) {
 	define( 'GGL_FREE_SHIPPING_THRESHOLD', 50 ); // Monto para envío gratis.
+}
+if ( ! defined( 'GGL_LOGO_MAX_WIDTH' ) ) {
+	define( 'GGL_LOGO_MAX_WIDTH', '200px' ); // Ancho máximo del logo del header/footer.
 }
 
 /**
@@ -50,6 +56,7 @@ require_once GGL_PERSONALIZACION_DIR . 'includes/shortcodes-secciones.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/woocommerce-mejoras.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/optimizacion-seguridad.php';
 require_once GGL_PERSONALIZACION_DIR . 'includes/seo-schema.php';
+require_once GGL_PERSONALIZACION_DIR . 'includes/personalizacion-marca.php';
 
 /**
  * Encola los assets (CSS/JS) propios del plugin solo en el front-end.

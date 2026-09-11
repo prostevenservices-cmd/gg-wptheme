@@ -356,6 +356,15 @@
 	margin-bottom: 20px;
 }
 
+/* ---------- Logo del header/footer más grande ---------- */
+/* Si cambias el tamaño, actualiza también la constante GGL_LOGO_MAX_WIDTH
+   en ggl-personalizacion-petcio.php (esa es la que manda en el sitio real). */
+.wpbingoLogo img {
+	max-width: 200px !important;
+	width: auto;
+	height: auto;
+}
+
 /* ---------- Oculta los avisos "Go Pro" de Elementor en el editor ---------- */
 .e-pro-upgrade,
 .elementor-nerd-box,
