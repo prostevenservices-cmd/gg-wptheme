@@ -46,6 +46,19 @@ if ( ! defined( 'GGL_FREE_SHIPPING_THRESHOLD' ) ) {
 if ( ! defined( 'GGL_LOGO_MAX_WIDTH' ) ) {
 	define( 'GGL_LOGO_MAX_WIDTH', '200px' ); // Ancho máximo del logo del header/footer.
 }
+if ( ! defined( 'GGL_LOGO_URL' ) ) {
+	// Logo real de la tienda, usado para sustituir el logo de demostración de Petcio en el footer.
+	define( 'GGL_LOGO_URL', 'https://guauguauland.com/wp-content/uploads/2026/07/Logo-Full-Top@2x.png' );
+}
+if ( ! defined( 'GGL_SOCIAL_FACEBOOK' ) ) {
+	define( 'GGL_SOCIAL_FACEBOOK', '#' ); // Ej: 'https://facebook.com/guauguauland'.
+}
+if ( ! defined( 'GGL_SOCIAL_INSTAGRAM' ) ) {
+	define( 'GGL_SOCIAL_INSTAGRAM', '#' ); // Ej: 'https://instagram.com/guauguauland'.
+}
+if ( ! defined( 'GGL_SOCIAL_WHATSAPP' ) ) {
+	define( 'GGL_SOCIAL_WHATSAPP', '#' ); // Ej: 'https://wa.me/17879185519'.
+}
 
 /**
  * Carga los módulos del plugin.

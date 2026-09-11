@@ -89,6 +89,35 @@ Para cambiar el teléfono o el tamaño del logo en el futuro, edita
 `GGL_LOGO_MAX_WIDTH` al principio de `ggl-personalizacion-petcio.php` (o el
 snippet PHP equivalente si usaste la Opción B).
 
+## Footer (plantilla de Elementor bloqueada)
+
+El footer de Petcio es una plantilla de Elementor global (post `#25112`)
+que no siempre se puede editar desde el front-end (Elementor no muestra el
+botón "Editar con Elementor" sobre el header/footer porque no forman parte
+del contenido de la página que se está visitando). Para editarla
+directamente:
+
+1. Entra al escritorio de WordPress.
+2. Ve a la URL `https://guauguauland.com/wp-admin/post.php?post=25112&action=edit`.
+3. Si aparece el botón azul **"Editar con Elementor"**, haz clic para abrir
+   el editor visual y modificar los enlaces de "Shop / Customer Services /
+   About Us" (que en la demo apuntan a `#`) con las URLs reales de tu tienda.
+
+Mientras tanto, este plugin ya corrige automáticamente (sin tocar
+Elementor) las partes del footer que sí se pueden resolver por código:
+
+- **Logo del footer**: sustituye la imagen de demostración ("petcio") por
+  el logo real definido en `GGL_LOGO_URL`, con el tamaño de
+  `GGL_LOGO_MAX_WIDTH`.
+- **Copyright**: cambia "© 2024 – Petcio. All Rights Reserved." por
+  "© [año actual] Guau Guau Land. Todos los derechos reservados.".
+- **Redes sociales**: registra el shortcode `[social_link]` (que la
+  plantilla ya usa pero se mostraba como texto literal porque no existía)
+  y muestra iconos de Facebook/Instagram/WhatsApp usando las URLs de
+  `GGL_SOCIAL_FACEBOOK`, `GGL_SOCIAL_INSTAGRAM` y `GGL_SOCIAL_WHATSAPP`
+  (por defecto en `#`; edítalas con tus perfiles reales para que se
+  muestren los iconos).
+
 ## Mejoras de WooCommerce incluidas
 
 - Insignia **"Nuevo"** automática en productos publicados hace menos de 30 días.

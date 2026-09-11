@@ -14,6 +14,7 @@
  *   [ggl_categorias_mascotas categorias="perro,gato,ave,pez"]
  *   [ggl_iconos_beneficios]               -> franja "Envío gratis / 30 días / Pago seguro"
  *   [ggl_countdown fecha="2026-12-31 23:59:59" texto="Oferta de verano"]
+ *   [social_link]                         -> iconos de redes sociales del footer (ver más abajo)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -289,3 +290,60 @@ function ggl_shortcode_countdown( $atts ) {
 	return ob_get_clean();
 }
 add_shortcode( 'ggl_countdown', 'ggl_shortcode_countdown' );
+
+/**
+ * [social_link]
+ * El footer de Petcio (plantilla de Elementor #25112) llama a este
+ * shortcode para mostrar los iconos de redes sociales, pero como el
+ * plugin/companion original del tema no está instalado, WordPress lo
+ * deja tal cual (se ve el texto literal "[social_link]"). Al registrar
+ * aquí el shortcode con el mismo nombre, Elementor lo renderiza
+ * automáticamente sin tener que editar la plantilla.
+ *
+ * Rellena las constantes GGL_SOCIAL_FACEBOOK / GGL_SOCIAL_INSTAGRAM /
+ * GGL_SOCIAL_WHATSAPP en ggl-personalizacion-petcio.php con las URLs
+ * reales; los iconos con URL vacía o "#" no se muestran.
+ */
+function ggl_shortcode_social_link() {
+	$redes = array(
+		'facebook'  => array(
+			'url'   => defined( 'GGL_SOCIAL_FACEBOOK' ) ? GGL_SOCIAL_FACEBOOK : '',
+			'icono' => 'fa-facebook',
+			'label' => 'Facebook',
+		),
+		'instagram' => array(
+			'url'   => defined( 'GGL_SOCIAL_INSTAGRAM' ) ? GGL_SOCIAL_INSTAGRAM : '',
+			'icono' => 'fa-instagram',
+			'label' => 'Instagram',
+		),
+		'whatsapp'  => array(
+			'url'   => defined( 'GGL_SOCIAL_WHATSAPP' ) ? GGL_SOCIAL_WHATSAPP : '',
+			'icono' => 'fa-whatsapp',
+			'label' => 'WhatsApp',
+		),
+	);
+
+	$redes = array_filter(
+		$redes,
+		function ( $red ) {
+			return ! empty( $red['url'] ) && '#' !== $red['url'];
+		}
+	);
+
+	if ( empty( $redes ) ) {
+		return '';
+	}
+
+	ob_start();
+	?>
+	<div class="ggl-social-link">
+		<?php foreach ( $redes as $red ) : ?>
+			<a href="<?php echo esc_url( $red['url'] ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( $red['label'] ); ?>">
+				<i class="fa <?php echo esc_attr( $red['icono'] ); ?>" aria-hidden="true"></i>
+			</a>
+		<?php endforeach; ?>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+add_shortcode( 'social_link', 'ggl_shortcode_social_link' );

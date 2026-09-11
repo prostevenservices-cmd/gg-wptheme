@@ -359,10 +359,33 @@
 /* ---------- Logo del header/footer más grande ---------- */
 /* Si cambias el tamaño, actualiza también la constante GGL_LOGO_MAX_WIDTH
    en ggl-personalizacion-petcio.php (esa es la que manda en el sitio real). */
-.wpbingoLogo img {
+.wpbingoLogo img,
+#bwp-footer .elementor-element-e3618ba img {
 	max-width: 200px !important;
 	width: auto;
 	height: auto;
+}
+
+/* ---------- Iconos de redes sociales del footer ([social_link]) ---------- */
+.ggl-social-link {
+	display: flex;
+	gap: 12px;
+}
+
+.ggl-social-link a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	text-decoration: none;
+}
+
+.ggl-social-link a:hover {
+	background: var(--ggl-color-primario);
 }
 
 /* ---------- Oculta los avisos "Go Pro" de Elementor en el editor ---------- */
