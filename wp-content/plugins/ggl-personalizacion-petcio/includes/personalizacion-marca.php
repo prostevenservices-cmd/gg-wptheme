@@ -62,17 +62,19 @@ add_action( 'template_redirect', 'ggl_marca_iniciar_buffer_telefono', 0 );
 /**
  * Agranda el logo del header y del footer (.wpbingoLogo img) al ancho
  * máximo definido en GGL_LOGO_MAX_WIDTH. Se imprime como CSS inline en
- * el <head> para asegurar que tiene prioridad sobre el CSS del tema,
- * sin necesidad de usar !important en la hoja de estilos.
+ * el <head> con !important porque el propio tema Petcio ya trae una
+ * regla más específica (`.bwp-header .wpbingoLogo img { max-width:143px }`)
+ * que, sin !important, seguiría ganando aunque nuestro <style> se
+ * imprima después.
  */
 function ggl_marca_imprimir_css_logo() {
 	$ancho_maximo = esc_attr( GGL_LOGO_MAX_WIDTH );
 	?>
 	<style id="ggl-logo-tamano">
 		.wpbingoLogo img {
-			max-width: <?php echo $ancho_maximo; ?>;
-			width: auto;
-			height: auto;
+			max-width: <?php echo $ancho_maximo; ?> !important;
+			width: auto !important;
+			height: auto !important;
 		}
 	</style>
 	<?php
